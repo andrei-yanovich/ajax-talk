@@ -1,0 +1,18 @@
+﻿extends layout
+
+block content
+  h1= title
+  .row
+      .container2
+        .container1
+          .desc
+            p pick a method to run
+            select#apiPicker.marginRight5
+              each val, key in ajaxApi
+                option= key
+            button#send Send
+          .responseCont
+            p.response
+  script(type='text/javascript', src='/javascripts/ajax.js')
+  script(type='text/javascript', src='/javascripts/main.js')
+  script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')

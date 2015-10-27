@@ -1,0 +1,56 @@
+﻿body
+  padding: 50px
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+a
+  color: #00B7FF
+
+.row:nth-of-type(odd)
+	.container1, .container2
+		background-color:#E5E5E5;
+	
+.row:nth-of-type(even)
+	.container1, .container2
+		background-color:#f5f5f5
+
+.row
+	clear:both	
+
+.container2
+	clear:left
+	float:left
+	width:100%
+	overflow:hidden
+
+.container1
+	float:left
+	width:100%
+	position:relative
+	right:50%
+	border-right:1px solid #CFCFCF
+	:before
+		content: ''
+		display: inline-block
+		height: 100%
+		vertical-align: middle
+
+
+.desc
+	float:left
+	position:relative
+	width:46%
+	overflow:hidden
+	left:52%
+	margin-bottom: 5px;
+
+
+.responseCont
+	float:left
+	position:relative
+	width:46%
+	overflow:hidden
+	left:56%
+	text-align: center;
+	margin-bottom: 5px;
+	
+.marginRight5
+	margin-right: 5px;
