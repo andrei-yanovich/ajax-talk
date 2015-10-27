@@ -86,27 +86,6 @@
 
 			<section>
 				<section>
-					<span class="current-topic">Ajax - History</span>
-					<h3>History of Ajax</h3>
-					<ul>
-						<li>March 1999: Internet Explorer 5 (ActiveX "Microsoft.XMLHTTP")</li>
-						<li>Late 1999: Mozila adoptes the feature (XMLHttpRequest)</li>
-						<li>April 1, 2004: Gmail</li>
-						<li>February 2005: Jesse James Garrett of Adaptive Path described new tactic in an essay (Ajax: A New Approach to Web Applications)</li>
-						<li>Late 2005: client-side libraries and server-side support for ASP.NET</li>
-						<li>April 5, 2006: XMLHttpRequest 1.0 w3c working draft</li>
-						<li>February 25, 2008: XMLHttpRequest 2.0 W3C working draft</li>
-					</ul>
-				</section>
-
-				<section>
-					<span class="current-topic">Ajax - History</span>
-					<img src="images/gmail.gif">
-				</section>
-			</section>
-
-			<section>
-				<section>
 					<span class="current-topic">Ajax - How to</span>
 					<h3>How to</h3>
 					<h3>XMLHttpRequest</h3>
@@ -181,9 +160,6 @@
 						<ul>
 							<li>Open()
 								<p>
-									open( method, URL )<br>
-									open( method, URL, async )<br>
-									open( method, URL, async, userName )<br>
 									open( method, URL, async, userName, password )<br>
 								</p>
 							</li>
@@ -196,6 +172,36 @@
 						</ul>
 					</p>
 				</section>
+        <section>
+          <span class="current-topic">Ajax - How to</span>
+          <h3>XMLHttpRequest</h3>
+          <p class="text-left">Modern standard events:
+            <ul>
+              <li>loadstart
+              </li>
+              <li>progress
+              </li>
+              <li>abort
+              </li>
+              <li>error
+              </li>
+              <li>load</li>
+              <li>timeout</li>
+              <li>loadend</li>
+            </ul>
+          </p>
+        </section>
+
+        <section>
+          <span class="current-topic">Ajax - How to</span>
+          <h3>Example:</h3>
+<pre><code class="javascript">
+function initRequest() {
+    // XDomainRequest for IE8, IE9
+    var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+    return new XHR();
+};</code></pre>
+        </section>
 
 				<section>
 					<span class="current-topic">Ajax - How to</span>
@@ -239,18 +245,6 @@
 };</code></pre>
 				</section>
 
-				<section>
-					<span class="current-topic">Ajax - How to</span>
-					<h3>Example:</h3>
-<pre><code class="javascript">function initRequest() {
-  if (window.XMLHttpRequest) {
-    return new XMLHttpRequest();
-  } else if (window.ActiveXObject) {
-    isIE = true; // IE5 — IE6
-    return new ActiveXObject("Microsoft.XMLHTTP");
-  }
-};</code></pre>
-				</section>
 				<section>
 					<span class="current-topic">Ajax - How to</span>
 					<h3>jQuery - Ajax</h3>
