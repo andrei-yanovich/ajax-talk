@@ -25,7 +25,8 @@
     ajax.makeAjaxPost = function makeAjaxPost() {
         var req = getXhr();
         attachReadyState(req);
-        
+        req.withCredentials = true;
+        document.cookie = 'cookie1=test; expires=Fri, 3 Aug 2017 20:47:11 UTC; path=/';
         req.open("POST", rootUrl + 'echo', true);
         req.setRequestHeader('Content-type', 'application/json');
         req.send(JSON.stringify({
