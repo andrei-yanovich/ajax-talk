@@ -483,6 +483,33 @@ parseResponse({"Name": "Foo", "Id": 1234, "Rank": 7});</code></pre>
 						</ul>
 					</p>
 				</section>
+        <section>
+          <span class="current-topic">CORS</span>
+          <p class="text-left">
+            Simple Request
+            <ul>
+              <li>The only allowed methods are:</li>
+              <ul>
+                <li>GET</li>
+                <li>HEAD</li>
+                <li>POST</li>
+              </ul>
+              <li>Apart from the headers set automatically by the user agent (e.g. Connection, User-Agent, etc.), the only headers which are allowed to be manually set are:</li>
+              <ul>
+                <li>Accept</li>
+                <li>Accept-Language</li>
+                <li>Content-Language</li>
+                <li>Content-Type</li>
+              </ul>
+              <li>The only allowed values for the Content-Type header are:</li>
+              <ul>
+                <li>application/x-www-form-urlencoded</li>
+                <li>multipart/form-data</li>
+                <li>text/plain</li>
+              </ul>
+            </ul>
+          </p>
+        </section>
 				<section>
 					<span class="current-topic">CORS</span>
 					<p class="text-left">
