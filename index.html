@@ -12,6 +12,11 @@
 	<!-- For syntax highlighting -->
 	<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
 
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
 	<style>span.current-topic {display: none;}</style>
 </head>
 <body>
@@ -505,6 +510,66 @@ parseResponse({"Name": "Foo", "Id": 1234, "Rank": 7});</code></pre>
 						</ul>
 					</p>
 				</section>
+        <section>
+          <span class="current-topic">CORS</span>
+          <p class="text-left">Request with credentials</p>
+          <pre><code class="javascript">
+var invocation = new XMLHttpRequest();
+var url = 'http://bar.other/resources/credentialed-content/';
+
+function callOtherDomain(){
+  if(invocation) {
+    invocation.open('GET', url, true);
+    invocation.withCredentials = true;
+    invocation.onreadystatechange = handler;
+    invocation.send();
+  }
+}
+          </code></pre>
+        </section>
+        <section>
+          <div class="group">
+            <pre>
+              <code>
+  GET /resources/access-control-with-credentials/ HTTP/1.1
+  Host: bar.other
+  User-Agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1b3pre) Gecko/20081130 Minefield/3.1b3pre
+  Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+  Accept-Language: en-us,en;q=0.5
+  Accept-Encoding: gzip,deflate
+  Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+  Connection: keep-alive
+  Referer: http://foo.example/examples/credential.html
+  Origin: http://foo.example
+  Cookie: pageAccess=2
+              </code>
+            </pre>
+          </div>
+          <div class="group">
+            <pre>
+              <code>
+HTTP/1.1 200 OK
+Date: Mon, 01 Dec 2008 01:34:52 GMT
+Server: Apache/2.0.61 (Unix) PHP/4.4.7 mod_ssl/2.0.61 OpenSSL/0.9.7e mod_fastcgi/2.4.2 DAV/2 SVN/1.4.2
+X-Powered-By: PHP/5.2.6
+Access-Control-Allow-Origin: http://foo.example
+Access-Control-Allow-Credentials: true
+Cache-Control: no-cache
+Pragma: no-cache
+Set-Cookie: pageAccess=3; expires=Wed, 31-Dec-2008 01:34:53 GMT
+Vary: Accept-Encoding, Origin
+Content-Encoding: gzip
+Content-Length: 106
+Keep-Alive: timeout=2, max=100
+Connection: Keep-Alive
+Content-Type: text/plain
+
+
+[text/plain payload]
+              </code>
+            </pre>
+          </div>
+        </section>
 			</section>
 
 			<section>
@@ -545,6 +610,7 @@ parseResponse({"Name": "Foo", "Id": 1234, "Rank": 7});</code></pre>
 								<p>Iframe with opened connection which is updated by the server with script tags</p>
 							</li>
 							<li>Web-sockets</li>
+              <li>Event Source</li>
 						</ul>
 					</p>
 				</section>
@@ -585,7 +651,7 @@ parseResponse({"Name": "Foo", "Id": 1234, "Rank": 7});</code></pre>
 			</section>
 
 			<section>
-				<span class="current-topic">by Andre Gloukhmantchouk</span>
+				<span class="current-topic">by Andrei Yanovich</span>
 				<div class="circular-large">
 					<img style="left: 130px; top: 100px;" src="images/questions.jpg">
 				</div>

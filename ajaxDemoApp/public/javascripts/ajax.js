@@ -1,5 +1,5 @@
 (function (ajax) {
-    var rootUrl = '/';
+    var rootUrl = 'http://ajaxepam.azurewebsites.net/';
 
     ajax.makeAjaxGet = function makeAjaxGet () {
         var req = getXhr();
