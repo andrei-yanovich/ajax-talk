@@ -253,17 +253,17 @@ function initRequest() {
 				<section>
 					<span class="current-topic">Ajax - How to</span>
 					<h3>jQuery - Ajax</h3>
-					<pre><code class="javascript">
-						$.ajax({
-			type: 'POST',
-            url: 'echo',
-            data: { testingMethod: 'Get' },
-            success: function(resp) {
-                var responseContainer = document.querySelector(".response");
-                responseContainer.innerText = JSON.stringify(resp);
-            }
-        });
- 					</code></pre>
+<pre><code class="javascript">
+$.ajax({
+	type: 'POST',
+	url: 'echo',
+	data: { testingMethod: 'Get' },
+	success: function(resp) {
+    	var responseContainer = document.querySelector(".response");
+			responseContainer.innerText = JSON.stringify(resp);
+	}
+});
+</code></pre>
  					<a href="http://api.jquery.com/category/ajax/" target="blank">api.jquery.com/category/ajax/</a>
 				</section>
 				<section>
@@ -273,31 +273,28 @@ function initRequest() {
 							<li>jQuery.get()
 								<p>
 									Load data from the server using a HTTP GET request
-									<pre><code class="javascript">
-						$.get( "test.php", { name: "John", time: "2pm" } )
-		 .done(function( data ) {
-		   alert( "Data Loaded: " + data );
-		 });
-	});
- 					</code></pre>
+<pre><code class="javascript">$.get( "test.php", { name: "John", time: "2pm" } )
+.done(function( data ) {
+	alert( "Data Loaded: " + data );
+});
+});
+</code></pre>
 								</p>
 							</li>
 							<li>jQuery.post()
 								<p>
 									Load data from the server using a HTTP POST request.
-									<pre><code class="javascript">
-						$.post( "ajax/test.html", function( data ) {
-		  $( ".result" ).html( data );
-		});
- 					</code></pre>
+<pre><code class="javascript">$.post( "ajax/test.html", function( data ) {
+	$( ".result" ).html( data );
+});
+</code></pre>
 								</p>
 							</li>
 							<li>.load()
 								<p>
 									Load data from the server and place the returned HTML into the matched element.
-									<pre><code class="javascript">
-						$( "#result" ).load( "ajax/test.html #container" );
- 					</code></pre>
+<pre><code class="javascript">$( "#result" ).load( "ajax/test.html #container" );
+</code></pre>
 								</p>
 							</li>
 						</ul>
@@ -310,35 +307,33 @@ function initRequest() {
 							<li>jQuery.getJSON()
 								<p>
 									Load JSON-encoded data from the server using a GET HTTP request.
-									<pre><code class="javascript">
-						var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-		  $.getJSON( flickerAPI, {
-		    tags: "mount rainier",
-		    tagmode: "any",
-		    format: "json"
-		  })
-		    .done(function( data ) {
-		      $.each( data.items, function( i, item ) {
-		        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
-		        if ( i === 3 ) {
-		          return false;
-		        }
-		      });
-		    });
- 					</code></pre>
+<pre><code class="javascript">var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+$.getJSON( flickerAPI, {
+	tags: "mount rainier",
+	tagmode: "any",
+	format: "json"
+})
+.done(function( data ) {
+	$.each( data.items, function( i, item ) {
+		$( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+		if ( i === 3 ) {
+			return false;
+		}
+	});
+});
+</code></pre>
 								</p>
 							</li>
 							<li>jQuery.getScript()
 								<p>
 									Load JSON-encoded data from the server using a GET HTTP request.
-									<pre><code class="javascript">
-						$.getScript( "ajax/test.js", function( data, textStatus, jqxhr ) {
-		  console.log( data ); // Data returned
-		  console.log( textStatus ); // Success
-		  console.log( jqxhr.status ); // 200
-		  console.log( "Load was performed." );
-		});
- 					</code></pre>
+<pre><code class="javascript">$.getScript( "ajax/test.js", function( data, textStatus, jqxhr ) {
+	console.log( data ); // Data returned
+	console.log( textStatus ); // Success
+	console.log( jqxhr.status ); // 200
+	console.log( "Load was performed." );
+});
+</code></pre>
 								</p>
 							</li>
 						</ul>
